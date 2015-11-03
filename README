@@ -1,0 +1,16 @@
+TO BE RELEASED ON 2015-11-25
+
+This software performs stochastic optimisation on deterministic functions. 
+
+A C code implementation of PISAA for the 2D image denoising application. 
+
+The Ferrite-Pearlite image is included.  
+
+Karagiannis, G., Konomi, B. A., Lin, G., & Liang, F. (2015). 
+Parallel and Interacting Stochastic Approximation Annealing algorithms for global optimisation. 
+arXiv preprint arXiv:1508.04876.
+
+
+
+
+
