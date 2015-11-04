@@ -103,7 +103,7 @@ exe                         : Binary file
 COMMENTS :
 ----------
 
-- The output gives `mh0 rate=-nan'. This is reasonable. It is referred to the standard Simulated Annealing algorithm which is not active.
+- The output gives `mh0 rate=-nan'. This is reasonable. It is referred to the standard Simulated Annealing algorithm which is not used.
  
 FUTURE UPDATES :
 ----------------
