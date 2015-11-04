@@ -1,0 +1,132 @@
+DESCRIPTION :
+-------------
+
+A C code implementation of PISAA for the 2D image denoising application. 
+
+The Ferrite-Pearlite image is included.  
+
+Karagiannis, G., Konomi, B., Lin, G., & Liang F. (under revision). 
+Parallel and Interacting Stochastic Approximation Annealing algorithms 
+for global optimisation.
+
+Copyright 2014 Georgios Karagiannis
+
+
+CONTACT DETAILS :
+-----------------
+
+Georgios Karagiannis
+
+Postdoctoral research associate
+Department of Mathematics, Purdue University
+150 N. University Street
+West Lafayette, IN 47907-2067, USA
+
+Telephone: +1 765 494-3405
+
+Email: gkaragia@purdue.edu
+
+Contact email: georgios.stats@gmail.com
+
+REQUIREMENTS :
+--------------
+
+C compiler (ANSI C, C99, or later)
+
+This code is tasted successfully with GCC, SUN, INTEL C compilers
+
+FILES :
+-------
+
+makefile					: Makefile
+
+pisaa.c 					: The main function
+
+Crossover_int_operations.c 	: Crossover operations
+
+Mutation_int_operations.c 	: Mutation operations
+
+MH_int_updates.c 			: Metropolis-Hastings updates to generate a seed
+
+Self_adjastment_prosedure.c : Functions related to the self adjusting mechanism
+
+cost_ising2D.c				: The cost function
+
+uniformrng.c 				: Uniform random number generator
+
+nrutil.c					: Numerical recipes functions to treat array 
+								allocations
+
+output_files				: Folder for the output of the program 
+
+exe							: Binary file  
+
+      input flags :
+      
+         -ID  		Reference number
+         -Data		file with the data; 
+         -Niter		number of iterations
+         -Npop		population size
+         -Nsam		size of sample obtained
+         -Gwarm		burn in parameter of gain function
+         -Ghigh		high value of gain function
+         -Gpow		power of gain function
+         -Hlow		low limit of grid
+         -Hhigh		high limit of grid
+         -Hsize		size of grid
+         -Hzeta		power of desired probability
+         -Hconst	theta normalisation constant
+         -Twarm		burn in parameter of temperature sequence
+         -Tlow		low value of temperature sequence
+         -Thigh		high value of temperature sequence
+         -Tpow		power of temperature sequence
+        
+      output files :
+      
+		./output_files/hist-n=%d-r=%d				The approximated values of 
+														thetas, and normalised 
+														thetas 
+		./output_files/fz_best_trace-n=%d-r=%d		Best value discovered, the 
+														whole chain
+		./output_files/fz_best-n=%d-r=%d			Best value discovered, 
+														originally
+		./output_files/fz_better-n=%d-r=%d			Best value discovered,  
+														after refined
+
+      examples :
+      
+      	make CC=gcc CFLAGS=-O2 LDFLAGS=-lm
+      
+		./exe -ID 1 -Data ./FPphotomicro_240x320_bw.dat -Niter 20000000 \
+         		-Npop 5 -Nsam 0 
+         
+         
+REFERENCES :
+-----------
+
+Georgios Karagiannis., Bledar A. Konomi, Guang Lin, and Faming Liang (2015). 
+Parallel and Interacting Stochastic Approximation Annealing algorithms for 
+global optimisation, Statistics and Computing.
+
+COMMENTS :
+----------
+
+- The output gives `mh0 rate=-nan'. This is reasonable. It is referred to the standard Simulated Annealing algorithm which is not active.
+ 
+FUTURE UPDATES :
+----------------
+
+- Add a flag that allows one to externally choose the mutation and crossover operations used as well as set the operation rates.
+
+- Make the code use openMP and openMPI.
+
+- Tidy up the declarations in header files properly.
+
+- Remove the code related to mh0 option.
+
+
+
+
+
+         
+         
