@@ -95,18 +95,10 @@ exe                         : Binary file
 
       examples :
       
-        make CC=gcc CFLAGS=-O2 LDFLAGS=-lm
+        make build CC=gcc CFLAGS=-O2 LDFLAGS=-lm
       
         ./exe -ID 1 -Data ./FPphotomicro_240x320_bw.dat -Niter 20000000 \
                 -Npop 5 -Nsam 0 
-         
-         
-REFERENCES :
------------
-
-Georgios Karagiannis., Bledar A. Konomi, Guang Lin, and Faming Liang (2015). 
-Parallel and Interacting Stochastic Approximation Annealing algorithms for 
-global optimisation, Statistics and Computing.
 
 COMMENTS :
 ----------
@@ -123,7 +115,5 @@ FUTURE UPDATES :
 - Tidy up the declarations in header files properly.
 
 - Remove the code related to mh0 option.
-
-
 
 
