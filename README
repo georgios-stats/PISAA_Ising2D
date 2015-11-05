@@ -3,6 +3,8 @@ DESCRIPTION :
 
 A C code implementation of PISAA for the 2D image denoising application. 
 
+PISAA is a stochastic optimisation algorithm that aims at overcoming the local trapping issue.
+
 The Ferrite-Pearlite image is included.  
 
 Karagiannis, G., Konomi, B., Lin, G., & Liang F. (under revision). 
