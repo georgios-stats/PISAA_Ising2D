@@ -33,7 +33,7 @@
 
 #include <math.h>
 
-double genrand_real3(void) ;
+#include "RNG.h"
 
 /* 
 NORMAL RANDOM VARIABLE 
@@ -56,8 +56,8 @@ double normalrng(void)
     {
 		do
 		{
-			v1 = 2.0*genrand_real3() - 1.0 ;
-			v2 = 2.0*genrand_real3() - 1.0 ;
+			v1 = 2.0*uniformrng() - 1.0 ;
+			v2 = 2.0*uniformrng() - 1.0 ;
 			w = v1*v1 + v2*v2 ;
 		} while (w >= 1.0) ;
 		c = sqrt( -2.0*log(w)/w ) ;
@@ -96,8 +96,8 @@ double normalrng_polar(void)
     {
 		do
 		{
-			v1 = 2.0*genrand_real3() - 1.0 ;
-			v2 = 2.0*genrand_real3() - 1.0 ;
+			v1 = 2.0*uniformrng() - 1.0 ;
+			v2 = 2.0*uniformrng() - 1.0 ;
 			w = v1*v1 + v2*v2 ;
 		} while (w >= 1.0) ;
 		c = sqrt(-2.0*log(w)/w) ;
@@ -132,9 +132,9 @@ double normalrng_ratio(void)
 	do
 	{
 
-		u = genrand_real3() ;
+		u = uniformrng() ;
 
-		v = 0.857763884960707*(2.0*genrand_real3()-1.0) ;
+		v = 0.857763884960707*(2.0*uniformrng()-1.0) ;
 
 		rnd = v / u ;
 

@@ -63,19 +63,28 @@ makefile                    : Makefile
 pisaa.c                     : The main function
 
 Crossover_int_operations.c  : Crossover operations
+Crossover_int_operations.h  : Header file
 
 Mutation_int_operations.c   : Mutation operations
+Mutation_int_operations.h   : Header file
 
 MH_int_updates.c            : Metropolis-Hastings updates to generate a seed
+MH_int_updates.h            : Header file
 
 Self_adjastment_prosedure.c : Functions related to the self adjusting mechanism
+Self_adjastment_prosedure.h : Header file
 
 cost_ising2D.c              : The cost function
+cost_ising2D.h              : Header file
 
 uniformrng.c                : Uniform random number generator
+normalrng.c                 : Normal random number generator
+RNG.h                       : Header file
 
-nrutil.c                    : Numerical recipes functions to treat array 
-                                allocations
+nrutil.c                    : Functions to treat array allocations
+nrutil.h                    : Header file
+
+FPphotomicro_240x320_bw.dat : The Ferrite-Pearlite image data-set
 
 output_files                : Folder for the output of the program 
 
@@ -118,7 +127,7 @@ exe                         : Binary file
         make build CC=gcc CFLAGS=-O2 LDFLAGS=-lm
       
         ./exe -ID 1 -Data ./FPphotomicro_240x320_bw.dat -Niter 20000000 \
-                -Npop 5 -Nsam 0 
+                -Npop 5 -Nsam 100 
 
 COMMENTS :
 ----------
@@ -131,8 +140,6 @@ FUTURE UPDATES :
 - Add a flag that allows one to externally choose the mutation and crossover operations used as well as set the operation rates.
 
 - Make the code use openMP and openMPI.
-
-- Tidy up the declarations in header files properly.
 
 - Remove the code related to mh0 option.
 

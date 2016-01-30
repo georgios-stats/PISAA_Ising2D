@@ -36,6 +36,7 @@
 #endif
 
 #include <math.h>
+#include "Self_adjastment_prosedure.h"
 
 #if (__SELFADJTYPE__==1)
 

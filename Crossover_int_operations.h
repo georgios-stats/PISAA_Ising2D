@@ -17,7 +17,7 @@
 */
 
 /*
- * Georgios Karagiannis 
+ * Georgios Karagiannis
  * Postdoctoral research associate
  * Department of Mathematics, Purdue University
  * 150 N. University Street
@@ -30,49 +30,24 @@
  * Contact email: georgios.stats@gmail.com
 */
 
+void CO_select_forward_0(double *, int *, int *, int ) ;
 
-/* declare the headers */
+void CO_select_backward_0(double *, int ) ;
 
-#include <stdlib.h>
-#include <math.h>
+void CO_select_forward_1(double *, int *, int *, double *, int , double ) ;
 
-#include "RNG.h"
+void CO_select_backward_1(double *, int , int , double *, int , double ) ;
 
-/* initializes a seed */
+void CO_select_forward_2(double *, int *, int *, double *, int , double ) ;
 
-void setseedrng(unsigned long s)
-{
-	srand( s ) ;
-}
+void CO_select_backward_2(double *, int , int , double *, int , double ) ;
 
-/* DEFAULT : generates a random number on (0,1)-real-interval */
+void CO_select_forward_3(double *, int *, int *, double *, int , double ) ;
 
-double uniformrng(void)
-{
-	double rnd ;
+void CO_select_backward_3(double *, int , int , double *, int , double ) ;
 
-	do {
-		rnd = (double) ( rand() / ( RAND_MAX + 1.0 ) ) ;
-	} while ( rnd == 0.0 || rnd == 1.0 ) ;
-
-	return rnd ;
-}
-
-/* DEFAULT : generates a random number on [a,b]-real-interval */
-
-int integerrng(int a, int b)
-{
-	return a +floor(uniformrng()*(b-a+1)) ;
-}
-
-
-
-
-
-
-
-
-
-
-
+void Crossover_int_Kpoint(int **, double *, int , int ,
+							double *, double *, int ,
+							double , double *,
+							int *, int * ) ;
 

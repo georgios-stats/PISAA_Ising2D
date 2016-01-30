@@ -38,31 +38,12 @@
 #include <time.h>
 #include "nrutil.h"
 
-void setseedrng(unsigned long) ;
-double uniformrng(void) ;
-int integerrng(int,int) ;
-
-void get_data(char[],int*,int*,int*) ;
-double cost(int*,int) ;
-void initialise_from_data(int*) ;
-
-void self_adj_grid_points(double*,int,double,double) ;
-void self_adj_desired_freq(double*,int,double) ;
-void self_adj_theta_update(double*,int,double*,double*,int,double*,double,double*) ;
-void self_adj_theta_norm(double*,double*,double*,int,double) ;
-
-void MH_Kpoint_int(int*,double*,int,double,int,double*,int*);
-
-void Mutation_int_Kpoint(int*,double*, int,
-						double*,double*,int,double,int,double*,
-						int*) ;
-void Mutation_int_Gibbs(int*,double*, int,
-						double*,double*,int,
-						double,int,int*) ;
-void Crossover_int_Kpoint(int**,double*,
-						int,int,
-						double*,double*,int,double,double*,
-						int*,int*) ;
+#include "RNG.h"
+#include "cost_ising2D.h"
+#include "Self_adjastment_prosedure.h"
+#include "MH_int_updates.h"
+#include "Mutation_int_operations.h"
+#include "Crossover_int_operations.h"
 
 void update_best_value(int *z_best, double *fz_best,
 						int **x, double *fx,
@@ -257,7 +238,10 @@ int main(int argc, char *argv[]){
 		else if (strcmp("-Nsam", argv[i]) == 0)
 		{
 			N_sample = atoi(argv[++i]) ;
-			N_thinning = N_iteration/N_sample ;
+			if (N_sample==0)
+				N_thinning = N_iteration/1 ;
+			else
+				N_thinning = N_iteration/N_sample ;
 		}
 		else if (strcmp("-Gwarm", argv[i]) == 0)			/*..GAIN*/
 			gain_warmup = atoi(argv[++i]) ;
