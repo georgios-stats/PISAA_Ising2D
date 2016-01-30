@@ -33,10 +33,9 @@
 
 #include <math.h>
 
-double uniformrng(void) ;
-double cost(int*,int) ;
-
-int integerrng(int,int) ;
+#include "RNG.h"
+#include "cost_ising2D.h"
+#include "MH_int_updates.h"
 
 void MH_Kpoint_int(int *z, double *fz,
 					int N_dimension, double temp,

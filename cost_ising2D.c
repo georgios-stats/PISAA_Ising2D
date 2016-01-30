@@ -36,6 +36,7 @@
 #include <math.h>
 #include "nrutil.h"
 #include <stdio.h>
+
 #include "cost_ising2D.h"
 
 #ifndef INFINITY
